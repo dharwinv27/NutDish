@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const searchBtn = document.getElementById("search-btn");
     const searchResults = document.getElementById("search-results");
 
-    // Sample food data
     const foodItems = [
         { name: "Vitamin A", description: "Carrot Salad" },
         { name: "SS birayani", description: "Covai" },
@@ -37,7 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
         { name: "Calcium ", description: "Sardine Salad on Whole Grain Bread" },
     ];
 
-    // Function to render search results
     const renderResults = (results) => {
         searchResults.innerHTML = ""; // Clear previous results
         if (results.length === 0) {
@@ -55,7 +53,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     };
 
-    // Search button event listener
     searchBtn.addEventListener("click", () => {
         const query = searchInput.value.toLowerCase();
         const filteredResults = foodItems.filter(item => item.name.toLowerCase().includes(query));
@@ -67,7 +64,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    // Logout functionality (for demo purposes)
     document.getElementById("logout").addEventListener("click", () => {
         alert("You have been logged out.");
         // Redirect to login page or perform logout actions
@@ -109,7 +105,6 @@ const restaurants = [
     // Add more restaurant data here
 ];
 
-// Function to display restaurants
 function displayRestaurants(filter = {}) {
     const restaurantList = document.querySelector('.restaurant-list');
     restaurantList.innerHTML = ''; // Clear existing restaurant cards
@@ -134,7 +129,6 @@ function displayRestaurants(filter = {}) {
     });
 }
 
-// Function to view menu of a restaurant
 function viewMenu(restaurantName) {
     const restaurant = restaurants.find(r => r.name === restaurantName);
     const menuSection = document.getElementById('menu');
@@ -151,12 +145,10 @@ function viewMenu(restaurantName) {
     });
 }
 
-// Function to add item to cart
 function addToCart(itemName) {
     alert(`${itemName} has been added to your cart!`);
 }
 
-// Event listeners for filters
 document.getElementById('cuisine').addEventListener('change', function() {
     const filters = {
         cuisine: this.value,
@@ -181,7 +173,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const totalPriceDisplay = document.getElementById("total-price");
     let totalPrice = 0;
 
-    // Function to add item to cart
     const addToCart = (itemName, itemPrice) => {
         const listItem = document.createElement("li");
         listItem.textContent = `${itemName} - ₹${itemPrice.toFixed(2)}`;
@@ -190,7 +181,6 @@ document.addEventListener("DOMContentLoaded", () => {
         totalPriceDisplay.textContent = `Total: ₹${totalPrice.toFixed(2)}`;
     };
 
-    // Add event listeners to buttons
     const buttons = document.querySelectorAll(".add-to-cart");
     buttons.forEach(button => {
         button.addEventListener("click", (event) => {
@@ -201,6 +191,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
 
 
 
